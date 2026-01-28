@@ -24,6 +24,11 @@
   <div class="row">
     <div class="card">
       <h3>Dataset</h3>
+      <label>Adapter</label>
+      <select id="adapterSelect" style="width:100%; padding:8px; font-size:14px;">
+        <option value="abm">ABM filesystem adapter (/data)</option>
+        <option value="generic">Generic limits adapter (/data_generic)</option>
+      </select>
       <label>Base URL (served path)</label>
       <input id="baseUrl" value="/data" />
       <button id="loadBtn">Load</button>

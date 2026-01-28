@@ -1,0 +1,16 @@
+[
+  {
+    "name": "queue_pressure_sweep",
+    "params": { "concurrency": 1 },
+    "status": "completed",
+    "reason": "",
+    "metrics": { "throughput": 0.9, "coordination_cost_ratio": 0.15 }
+  },
+  {
+    "name": "queue_pressure_sweep",
+    "params": { "concurrency": 8 },
+    "status": "halted",
+    "reason": "rate_limit_wall",
+    "metrics": { "throughput": 0.05, "coordination_cost_ratio": 0.88 }
+  }
+]

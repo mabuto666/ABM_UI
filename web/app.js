@@ -1,4 +1,5 @@
 import { AbmFilesystemAdapter } from "./adapters/abm_fs_adapter.js";
+import { GenericLimitsFilesystemAdapter } from "./adapters/generic_limits_fs_adapter.js";
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s)
@@ -26,8 +27,9 @@ let adapter = new AbmFilesystemAdapter("/data");
 let current = { limits: [] };
 
 $("loadBtn").onclick = async () => {
-  const base = ($("baseUrl").value || "/data").trim();
-  adapter = new AbmFilesystemAdapter(base);
+  const sel = $("adapterSelect").value;
+  const base = ($("baseUrl").value || (sel==="generic" ? "/data_generic" : "/data")).trim();
+  adapter = (sel==="generic") ? new GenericLimitsFilesystemAdapter(base) : new AbmFilesystemAdapter(base);
   $("status").textContent = "Loading...";
   try {
     const limits = await adapter.getLimits();

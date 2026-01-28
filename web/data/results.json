@@ -1,0 +1,23 @@
+[
+  {
+    "benchmark": "wip_sweep",
+    "parameters": {"wip": 1},
+    "outcome": "completed",
+    "halt_reason": "",
+    "metrics": {"throughput": 1.0, "coordination_cost_ratio": 0.10, "verification_latency_p95_ms": 20}
+  },
+  {
+    "benchmark": "wip_sweep",
+    "parameters": {"wip": 4},
+    "outcome": "completed",
+    "halt_reason": "",
+    "metrics": {"throughput": 0.65, "coordination_cost_ratio": 0.35, "verification_latency_p95_ms": 35}
+  },
+  {
+    "benchmark": "wip_sweep",
+    "parameters": {"wip": 8},
+    "outcome": "halted",
+    "halt_reason": "coordination_cost_exceeded",
+    "metrics": {"throughput": 0.12, "coordination_cost_ratio": 0.81, "verification_latency_p95_ms": 70}
+  }
+]

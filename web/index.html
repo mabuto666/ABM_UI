@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>ABM_UI (Reusable Telemetry Consumer)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui,-apple-system,Segoe UI,Roboto,sans-serif; margin: 16px; }
+    .row { display:flex; gap:16px; flex-wrap:wrap; }
+    .card { border:1px solid #ddd; border-radius:10px; padding:12px; min-width:320px; }
+    table { border-collapse:collapse; width:100%; }
+    th,td { border-bottom:1px solid #eee; padding:6px 8px; font-size:13px; text-align:left; }
+    .muted { color:#666; font-size:13px; }
+    input { width:100%; padding:8px; font-size:14px; }
+    pre { white-space:pre-wrap; font-size:12px; }
+    code { font-size:12px; }
+    button { padding:8px 10px; }
+  </style>
+</head>
+<body>
+  <h1>ABM_UI</h1>
+  <p class="muted">Standalone, reusable telemetry consumer UI (adapter-based). Ships with an ABM filesystem adapter.</p>
+
+  <div class="row">
+    <div class="card">
+      <h3>Dataset</h3>
+      <label>Base URL (served path)</label>
+      <input id="baseUrl" value="/data" />
+      <button id="loadBtn">Load</button>
+      <p id="status" class="muted"></p>
+      <p class="muted">Expected files: results.json, aggregates.json, optional events.jsonl</p>
+    </div>
+
+    <div class="card" style="flex:1;">
+      <h3>Scaling limits</h3>
+      <div id="limits"></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <h3>Raw record</h3>
+    <pre id="raw"></pre>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

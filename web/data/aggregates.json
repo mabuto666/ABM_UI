@@ -1,0 +1,8 @@
+{
+  "version": "sample",
+  "notes": "This is deterministic sample data for ABM_UI verification.",
+  "scaling_indicators": {
+    "throughput_by_wip": {"1": 1.0, "4": 0.65, "8": 0.12},
+    "coordination_cost_ratio_by_wip": {"1": 0.10, "4": 0.35, "8": 0.81}
+  }
+}
